@@ -15,8 +15,7 @@ export class LoginComponent implements OnInit {
   error = "";
   email = 'peter@klaven';
   password = 'cityslicka';
-  ngOnInit() {
-  }
+  ngOnInit() { }
   onLogin(email, password) {
     this.httpClient.post("https://reqres.in/api/login",
       {
@@ -27,18 +26,12 @@ export class LoginComponent implements OnInit {
         data => {
           console.log("POST Request is successful ", data);
           this.router.navigateByUrl('/users');
-
         },
         error => {
-
           this.error = error.error.error;
           console.log("Error", error);
-
         }
 
       );
   }
-
-
-
 }

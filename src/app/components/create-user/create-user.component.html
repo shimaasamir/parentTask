@@ -1,3 +1,22 @@
-<p>
-  create-user works!
-</p>
+<app-layout>
+  <div *ngIf="message" class="alert alert-success" role="alert">
+    {{message}}
+  </div>
+  <form class="createUser">
+    <h1 class="text-center">
+      Create User
+    </h1>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" [(ngModel)]='name' class="form-control" name="name" [value]='name' id="name"
+        aria-describedby="nameHelp" placeholder="Enter name">
+
+    </div>
+    <div class="form-group">
+      <label for="job">Job</label>
+      <input type="text" [(ngModel)]='job' name="job" class="form-control" [value]='job' id="job" placeholder="job">
+    </div>
+    <p class="helpError">{{error}}</p>
+    <button (click)="addUser(name,job)" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</app-layout>
