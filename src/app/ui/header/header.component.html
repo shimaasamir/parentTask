@@ -1,9 +1,12 @@
 <nav class="navbar navbar-dark bg-dark mb-5">
   <a class="navbar-brand" href="/">Angular & Bootstrap</a>
   <div class="navbar-expand mr-auto">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-      <a class="nav-item nav-link" routerLink="/users">Users</a>
+    <div class="navbar-nav" routerLinkActive="active">
+
+      <a class="nav-item nav-link" routerLink="/login" routerLinkActive="active" href="/login">Login</a>
+      <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active" href="/users">Users</a>
+      <a class="nav-item nav-link" routerLink="/create" routerLinkActive="active" href="/create"
+        [routerLinkActiveOptions]="{exact: true}">Create User</a>
     </div>
   </div>
 </nav>
