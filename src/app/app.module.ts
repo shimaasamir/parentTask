@@ -12,8 +12,10 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
 import { HttpClientModule } from '@angular/common/http';
 
 import { UiModule } from './ui/ui.module';
+import { DeleteConfirmationComponent } from './components/delete-confirmation/delete-confirmation.component';
+import { ConfirmationDialogService } from './components/delete-confirmation/delete-confirmation.service';
 
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,16 +23,19 @@ import { UiModule } from './ui/ui.module';
     UsersComponent,
     UserComponent,
     CreateUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    DeleteConfirmationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    UiModule
+    UiModule,
+    NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [ConfirmationDialogService],
+  entryComponents: [DeleteConfirmationComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
